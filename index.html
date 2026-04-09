@@ -1,55 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HemAth</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HemAth | Home</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">HemAth</a>
 
-<header class="site-header">
-  <div class="container nav-container">
-    <h1 class="logo">HemAth</h1>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="artisans.html">Artisans</a>
-      <a href="shop.html">Shop</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">
+        ☰
+      </button>
 
-<section class="hero-home">
-  <div class="container hero-content">
-    <h1>Empowering Kashmiri Women Through Craft</h1>
-    <p>Preserving heritage through shawls, jewelry, and handmade goods.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container card-grid">
-
-    <div class="product-card">
-      <img src="Shawlgreen.JPG">
-      <div class="card-content"><h3>Shawls</h3></div>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="artisans.html">Artisans</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="product-card">
-      <img src="Aathor1.JPG">
-      <div class="card-content"><h3>Aathor</h3></div>
+  <section class="hero-home" style="background-image: linear-gradient(rgba(31,20,30,0.62), rgba(31,20,30,0.62)), url('Shawlhemathsign.JPG');">
+    <div class="container hero-content">
+      <p class="section-label light-label">Strength. Heritage. Empowerment.</p>
+      <h1>Empowering displaced Kashmiri women through craft, culture, and opportunity</h1>
+      <p class="hero-text">
+        HemAth preserves heritage and supports women artisans through handmade shawls,
+        jewelry, tea, and mission-driven community work.
+      </p>
+      <div class="button-row">
+        <a href="shop.html" class="btn btn-primary">Shop Collection</a>
+        <a href="about.html" class="btn btn-secondary">Learn More</a>
+      </div>
     </div>
+  </section>
 
-    <div class="product-card">
-      <img src="Kasmirigreenteakhewa.JPG">
-      <div class="card-content"><h3>Khewa Tea</h3></div>
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <p class="section-label">Our Story</p>
+        <h2>From displacement to renewed purpose</h2>
+        <p>
+          HemAth supports displaced Kashmiri women by preserving traditional skills,
+          promoting economic independence, and creating meaningful opportunities through
+          craft and community.
+        </p>
+        <p>
+          What began as a mission rooted in resilience continues to grow into a digital
+          and product experience that can connect more people to Kashmiri heritage.
+        </p>
+        <a href="about.html" class="text-link">Read our story →</a>
+      </div>
+
+      <div class="image-card">
+        <img src="geinvolved-1.JPG" alt="HemAth community members" />
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <section class="section soft-bg">
+    <div class="container">
+      <div class="section-heading center">
+        <p class="section-label">Featured Collections</p>
+        <h2>Handcrafted with meaning</h2>
+        <p>Explore products rooted in Kashmiri culture, craftsmanship, and community impact.</p>
+      </div>
 
-<script src="script.js"></script>
+      <div class="card-grid">
+        <article class="product-card">
+          <img src="Aathorshawlbundle.JPG" alt="Aathor jewelry styled with shawls" />
+          <div class="card-content">
+            <h3>Aathor & Jewelry</h3>
+            <p>Traditional handcrafted pieces inspired by a cherished Kashmiri cultural form.</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="Shawlbundle.JPG" alt="HemAth shawl collection" />
+          <div class="card-content">
+            <h3>Embroidered Shawls</h3>
+            <p>Elegant textiles shaped by traditional detail, careful embroidery, and timeless style.</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="Kasmirigreenteakhewa.JPG" alt="Kashmiri khewa tea" />
+          <div class="card-content">
+            <h3>Kashmiri Khewa</h3>
+            <p>Warm, aromatic tea blends that connect HemAth’s collection to Kashmiri culinary heritage.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div class="image-card">
+        <img src="Pinkblueshawlearshowcase.JPG" alt="Jewelry styled with shawls" />
+      </div>
+
+      <div>
+        <p class="section-label">Mission in Action</p>
+        <h2>Every product supports a larger purpose</h2>
+        <p>
+          HemAth is building toward a simple e-commerce experience where people can browse
+          and purchase products easily while directly supporting displaced Kashmiri women.
+        </p>
+        <p>
+          The goal is not just a store. It is a mission-led product space that combines
+          culture, storytelling, and real economic opportunity.
+        </p>
+        <a href="shop.html" class="btn btn-primary">Explore Shop</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <h3>HemAth</h3>
+        <p>Handmade heritage. Thoughtful design. Community impact.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="artisans.html">Artisans</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
