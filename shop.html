@@ -522,13 +522,9 @@
 
     .showcase-strip {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.9rem;
       margin: 1rem 0 2rem;
-    }
-
-    .showcase-strip.three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .showcase-strip.five {
@@ -566,100 +562,6 @@
       color: #fff;
     }
 
-    .quick-view-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(4, 3, 8, 0.74);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      z-index: 400;
-    }
-
-    .quick-view-modal.open {
-      display: flex;
-    }
-
-    .quick-view-card {
-      width: min(980px, 100%);
-      background: linear-gradient(180deg, #191321, #130f1c);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 28px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
-      position: relative;
-    }
-
-    .quick-view-image {
-      min-height: 420px;
-      background: #120d19;
-    }
-
-    .quick-view-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .quick-view-content {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0.9rem;
-    }
-
-    .quick-view-content h3 {
-      margin: 0;
-      color: #fff;
-      font-size: 1.8rem;
-    }
-
-    .quick-view-content p {
-      margin: 0;
-      color: rgba(255,255,255,0.78);
-      line-height: 1.8;
-    }
-
-    .quick-view-price {
-      color: #f0bd62;
-      font-size: 1.35rem;
-      font-weight: 800;
-    }
-
-    .quick-view-close {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: none;
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      cursor: pointer;
-      font-size: 1.1rem;
-    }
-
-    .shop-page .site-footer {
-      background: rgba(9, 8, 13, 0.92);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.82);
-    }
-
-    .shop-page .site-footer h3,
-    .shop-page .footer-links a {
-      color: #fff;
-    }
-
-    .shop-page .footer-links a:hover {
-      color: #f0bd62;
-    }
-
     @media (max-width: 1180px) {
       .shop-shell {
         grid-template-columns: 1fr;
@@ -679,8 +581,7 @@
     }
 
     @media (max-width: 980px) {
-      .shop-hero-content,
-      .quick-view-card {
+      .shop-hero-content {
         grid-template-columns: 1fr;
       }
 
@@ -689,20 +590,14 @@
       }
 
       .showcase-strip,
-      .showcase-strip.three,
       .showcase-strip.five {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .quick-view-image {
-        min-height: 300px;
       }
     }
 
     @media (max-width: 680px) {
       .product-grid,
       .showcase-strip,
-      .showcase-strip.three,
       .showcase-strip.five {
         grid-template-columns: 1fr;
       }
@@ -766,12 +661,7 @@
   <section class="shop-toolbar-wrap" id="shop-products">
     <div class="container">
       <div class="shop-toolbar">
-        <input
-          type="text"
-          id="shop-search"
-          class="shop-search"
-          placeholder="Search products, shawls, Aathors, tea..."
-        />
+        <input type="text" id="shop-search" class="shop-search" placeholder="Search products, shawls, Aathors, tea..." />
 
         <select id="shop-category-filter" class="shop-select">
           <option value="all">All categories</option>
@@ -801,9 +691,7 @@
               <div>
                 <span class="shop-category-tag">Shawls</span>
                 <h2>Embroidered Shawl Collection</h2>
-                <p>
-                  Elegant shawls shaped by traditional detail, timeless design, and Kashmiri craftsmanship.
-                </p>
+                <p>Elegant shawls shaped by traditional detail, timeless design, and Kashmiri craftsmanship.</p>
               </div>
             </div>
 
@@ -816,23 +704,9 @@
                 <div class="product-content">
                   <h3 class="product-title">Green Shawl</h3>
                   <p class="product-desc">Detailed floral embroidery on a soft neutral base with elegant heritage styling.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$25.99</span>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
                   <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Green Shawl"
-                      data-price="25.99"
-                      data-image="Shawlgreen.JPG"
-                      data-desc="Detailed floral embroidery on a soft neutral base with elegant heritage styling.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Green Shawl"
-                      data-price="25.99"
-                      data-image="Shawlgreen.JPG">
-                      Add to Cart
-                    </button>
+                    <button class="btn btn-primary add-to-cart" data-name="Green Shawl" data-price="25.99" data-image="Shawlgreen.JPG">Add to Cart</button>
                   </div>
                 </div>
               </article>
@@ -844,24 +718,10 @@
                 </div>
                 <div class="product-content">
                   <h3 class="product-title">Red Shawl</h3>
-                  <p class="product-desc">Rich red textile with bold gold border detailing and a formal, traditional presentation.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$25.99</span>
-                  </div>
+                  <p class="product-desc">Rich red textile with bold gold border detailing and a formal traditional presentation.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
                   <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Red Shawl"
-                      data-price="25.99"
-                      data-image="Shawlred.JPG"
-                      data-desc="Rich red textile with bold gold border detailing and a formal, traditional presentation.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Red Shawl"
-                      data-price="25.99"
-                      data-image="Shawlred.JPG">
-                      Add to Cart
-                    </button>
+                    <button class="btn btn-primary add-to-cart" data-name="Red Shawl" data-price="25.99" data-image="Shawlred.JPG">Add to Cart</button>
                   </div>
                 </div>
               </article>
@@ -874,23 +734,9 @@
                 <div class="product-content">
                   <h3 class="product-title">Pink Shawl</h3>
                   <p class="product-desc">Vibrant textile finished with classic embroidered edging and a striking color presentation.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$25.99</span>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
                   <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Pink Shawl"
-                      data-price="25.99"
-                      data-image="Shawlpink.JPG"
-                      data-desc="Vibrant textile finished with classic embroidered edging and a striking color presentation.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Pink Shawl"
-                      data-price="25.99"
-                      data-image="Shawlpink.JPG">
-                      Add to Cart
-                    </button>
+                    <button class="btn btn-primary add-to-cart" data-name="Pink Shawl" data-price="25.99" data-image="Shawlpink.JPG">Add to Cart</button>
                   </div>
                 </div>
               </article>
@@ -903,23 +749,9 @@
                 <div class="product-content">
                   <h3 class="product-title">Light Blue Shawl</h3>
                   <p class="product-desc">Soft pastel textile with elegant gold border work and refined decorative detailing.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$25.99</span>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
                   <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Light Blue Shawl"
-                      data-price="25.99"
-                      data-image="Shawllightblue.JPG"
-                      data-desc="Soft pastel textile with elegant gold border work and refined decorative detailing.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Light Blue Shawl"
-                      data-price="25.99"
-                      data-image="Shawllightblue.JPG">
-                      Add to Cart
-                    </button>
+                    <button class="btn btn-primary add-to-cart" data-name="Light Blue Shawl" data-price="25.99" data-image="Shawllightblue.JPG">Add to Cart</button>
                   </div>
                 </div>
               </article>
@@ -932,23 +764,9 @@
                 <div class="product-content">
                   <h3 class="product-title">White Shawl</h3>
                   <p class="product-desc">A minimal and graceful look with soft drape and subtle pink embroidered trim.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$25.99</span>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
                   <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="White Shawl"
-                      data-price="25.99"
-                      data-image="Shawlwhite.JPG"
-                      data-desc="A minimal and graceful look with soft drape and subtle pink embroidered trim.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="White Shawl"
-                      data-price="25.99"
-                      data-image="Shawlwhite.JPG">
-                      Add to Cart
-                    </button>
+                    <button class="btn btn-primary add-to-cart" data-name="White Shawl" data-price="25.99" data-image="Shawlwhite.JPG">Add to Cart</button>
                   </div>
                 </div>
               </article>
@@ -961,38 +779,18 @@
                 <div class="product-content">
                   <h3 class="product-title">Shawl Showcase</h3>
                   <p class="product-desc">A featured display view of the HemAth shawl collection for signature presentation.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$25.99</span>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
                   <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Shawl Showcase"
-                      data-price="25.99"
-                      data-image="Shawlbundle.JPG"
-                      data-desc="A featured display view of the HemAth shawl collection for signature presentation.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Shawl Showcase"
-                      data-price="25.99"
-                      data-image="Shawlbundle.JPG">
-                      Add to Cart
-                    </button>
+                    <button class="btn btn-primary add-to-cart" data-name="Shawl Showcase" data-price="25.99" data-image="Shawlbundle.JPG">Add to Cart</button>
                   </div>
                 </div>
               </article>
             </div>
 
-            <div class="showcase-strip three">
-              <div class="showcase-tile">
-                <img src="Shawlhemathsign.JPG" alt="HemAth Shawl Display" />
-              </div>
-              <div class="showcase-tile">
-                <img src="Shawlbundle.JPG" alt="Shawl Bundle Showcase" />
-              </div>
-              <div class="showcase-tile">
-                <img src="geinvolved-1.JPG" alt="HemAth Community" />
-              </div>
+            <div class="showcase-strip">
+              <div class="showcase-tile"><img src="Shawlhemathsign.JPG" alt="HemAth Shawl Display" /></div>
+              <div class="showcase-tile"><img src="Shawlbundle.JPG" alt="Shawl Bundle Showcase" /></div>
+              <div class="showcase-tile"><img src="geinvolved-1.JPG" alt="HemAth Community" /></div>
             </div>
           </section>
 
@@ -1001,291 +799,108 @@
               <div>
                 <span class="shop-category-tag">Aathor</span>
                 <h2>Traditional Aathor Collection</h2>
-                <p>
-                  Handmade pieces inspired by a cherished Kashmiri tradition, along with artisan accessory presentation.
-                </p>
+                <p>Handmade pieces inspired by a cherished Kashmiri tradition, along with artisan accessory presentation.</p>
               </div>
             </div>
 
             <div class="product-grid">
               <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 1" data-price="20">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Traditional</span>
-                  <img src="Aathor1.JPG" alt="Aathor Style 1" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Traditional</span><img src="Aathor1.JPG" alt="Aathor Style 1" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Aathor Style 1</h3>
                   <p class="product-desc">Traditional red-bead Aathor with a handcrafted tassel silhouette and elegant balance.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$20.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Aathor Style 1"
-                      data-price="20"
-                      data-image="Aathor1.JPG"
-                      data-desc="Traditional red-bead Aathor with a handcrafted tassel silhouette and elegant balance.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Aathor Style 1"
-                      data-price="20"
-                      data-image="Aathor1.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 1" data-price="20" data-image="Aathor1.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 2" data-price="20">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Heritage</span>
-                  <img src="Aathor2.JPG" alt="Aathor Style 2" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Heritage</span><img src="Aathor2.JPG" alt="Aathor Style 2" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Aathor Style 2</h3>
                   <p class="product-desc">Elegant multicolor chain design with traditional tassel finishing and festive detail.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$20.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Aathor Style 2"
-                      data-price="20"
-                      data-image="Aathor2.JPG"
-                      data-desc="Elegant multicolor chain design with traditional tassel finishing and festive detail.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Aathor Style 2"
-                      data-price="20"
-                      data-image="Aathor2.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 2" data-price="20" data-image="Aathor2.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 3" data-price="20">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Blue Detail</span>
-                  <img src="Aathor3.JPG" alt="Aathor Style 3" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Blue Detail</span><img src="Aathor3.JPG" alt="Aathor Style 3" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Aathor Style 3</h3>
                   <p class="product-desc">Blue-bead handcrafted Aathor with ornamental bead cap detail and bold artisan contrast.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$20.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Aathor Style 3"
-                      data-price="20"
-                      data-image="Aathor3.JPG"
-                      data-desc="Blue-bead handcrafted Aathor with ornamental bead cap detail and bold artisan contrast.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Aathor Style 3"
-                      data-price="20"
-                      data-image="Aathor3.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 3" data-price="20" data-image="Aathor3.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 4" data-price="20">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Classic</span>
-                  <img src="Aathor4.JPG" alt="Aathor Style 4" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Classic</span><img src="Aathor4.JPG" alt="Aathor Style 4" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Aathor Style 4</h3>
                   <p class="product-desc">Structured red tassel design with traditional cone cap detail and handcrafted flow.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$20.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Aathor Style 4"
-                      data-price="20"
-                      data-image="Aathor4.JPG"
-                      data-desc="Structured red tassel design with traditional cone cap detail and handcrafted flow.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Aathor Style 4"
-                      data-price="20"
-                      data-image="Aathor4.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 4" data-price="20" data-image="Aathor4.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 5" data-price="20">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Compact</span>
-                  <img src="Aathor5.JPG" alt="Aathor Style 5" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Compact</span><img src="Aathor5.JPG" alt="Aathor Style 5" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Aathor Style 5</h3>
                   <p class="product-desc">Compact tassel styling with clustered red beading and traditional handcrafted presence.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$20.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Aathor Style 5"
-                      data-price="20"
-                      data-image="Aathor5.JPG"
-                      data-desc="Compact tassel styling with clustered red beading and traditional handcrafted presence.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Aathor Style 5"
-                      data-price="20"
-                      data-image="Aathor5.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 5" data-price="20" data-image="Aathor5.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 6" data-price="20">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Long Chain</span>
-                  <img src="Aathor6.JPG" alt="Aathor Style 6" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Long Chain</span><img src="Aathor6.JPG" alt="Aathor Style 6" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Aathor Style 6</h3>
                   <p class="product-desc">Long red chain Aathor with traditional tassel proportions and ceremonial character.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$20.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Aathor Style 6"
-                      data-price="20"
-                      data-image="Aathor6.JPG"
-                      data-desc="Long red chain Aathor with traditional tassel proportions and ceremonial character.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Aathor Style 6"
-                      data-price="20"
-                      data-image="Aathor6.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 6" data-price="20" data-image="Aathor6.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="aathor" data-name="Beaded Earrings" data-price="20">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Accessory</span>
-                  <img src="Aathor7.JPG" alt="Beaded Earrings" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Accessory</span><img src="Aathor7.JPG" alt="Beaded Earrings" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Beaded Earrings</h3>
                   <p class="product-desc">Light blue artisan earrings that complement the HemAth accessory collection.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$20.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Beaded Earrings"
-                      data-price="20"
-                      data-image="Aathor7.JPG"
-                      data-desc="Light blue artisan earrings that complement the HemAth accessory collection.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Beaded Earrings"
-                      data-price="20"
-                      data-image="Aathor7.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Beaded Earrings" data-price="20" data-image="Aathor7.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="aathor" data-name="Aathor Collection Display" data-price="20">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Collection</span>
-                  <img src="Aathorbundle.JPG" alt="Aathor Collection Display" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Collection</span><img src="Aathorbundle.JPG" alt="Aathor Collection Display" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Aathor Collection Display</h3>
                   <p class="product-desc">A featured look at multiple handmade Aathor designs presented together.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$20.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Aathor Collection Display"
-                      data-price="20"
-                      data-image="Aathorbundle.JPG"
-                      data-desc="A featured look at multiple handmade Aathor designs presented together.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Aathor Collection Display"
-                      data-price="20"
-                      data-image="Aathorbundle.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Collection Display" data-price="20" data-image="Aathorbundle.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="aathor" data-name="Aathor Materials Showcase" data-price="20">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Craft Detail</span>
-                  <img src="Aathorbundlebox.JPG" alt="Aathor Materials Showcase" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Craft Detail</span><img src="Aathorbundlebox.JPG" alt="Aathor Materials Showcase" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Aathor Materials Showcase</h3>
                   <p class="product-desc">A closer look at the materials and beadwork behind HemAth’s handcrafted accessory line.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$20.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Aathor Materials Showcase"
-                      data-price="20"
-                      data-image="Aathorbundlebox.JPG"
-                      data-desc="A closer look at the materials and beadwork behind HemAth’s handcrafted accessory line.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Aathor Materials Showcase"
-                      data-price="20"
-                      data-image="Aathorbundlebox.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Materials Showcase" data-price="20" data-image="Aathorbundlebox.JPG">Add to Cart</button></div>
                 </div>
               </article>
             </div>
 
             <div class="showcase-strip five">
-              <div class="showcase-tile">
-                <img src="Aathorshawl1.JPG" alt="Aathor on Shawl 1" />
-              </div>
-              <div class="showcase-tile">
-                <img src="Aathorshawl2.JPG" alt="Aathor on Shawl 2" />
-              </div>
-              <div class="showcase-tile">
-                <img src="Aathorshawlbundle.JPG" alt="Aathor Shawl Bundle" />
-              </div>
-              <div class="showcase-tile">
-                <img src="Earingbundle.JPG" alt="Earring Bundle" />
-              </div>
-              <div class="showcase-tile">
-                <img src="Pinkblueshawlearshowcase.JPG" alt="Pink and Blue Shawl Ear Showcase" />
-              </div>
+              <div class="showcase-tile"><img src="Aathorshawl1.JPG" alt="Aathor on Shawl 1" /></div>
+              <div class="showcase-tile"><img src="Aathorshawl2.JPG" alt="Aathor on Shawl 2" /></div>
+              <div class="showcase-tile"><img src="Aathorshawlbundle.JPG" alt="Aathor Shawl Bundle" /></div>
+              <div class="showcase-tile"><img src="Earingbundle.JPG" alt="Earring Bundle" /></div>
+              <div class="showcase-tile"><img src="Pinkblueshawlearshowcase.JPG" alt="Pink and Blue Shawl Ear Showcase" /></div>
             </div>
           </section>
 
@@ -1294,126 +909,48 @@
               <div>
                 <span class="shop-category-tag">Tea</span>
                 <h2>Kashmiri Khewa Tea</h2>
-                <p>
-                  Traditional green tea blends presented with warmth, flavor, and cultural connection.
-                </p>
+                <p>Traditional green tea blends presented with warmth, flavor, and cultural connection.</p>
               </div>
             </div>
 
             <div class="product-grid">
               <article class="product-card shop-product" data-category="tea" data-name="Khewa Original" data-price="10">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Original</span>
-                  <img src="Kasmirigreenteakhewa.JPG" alt="Khewa Original" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Original</span><img src="Kasmirigreenteakhewa.JPG" alt="Khewa Original" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Khewa Original</h3>
                   <p class="product-desc">Authentic Kashmiri khewa green tea in its classic original profile.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$10.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Khewa Original"
-                      data-price="10"
-                      data-image="Kasmirigreenteakhewa.JPG"
-                      data-desc="Authentic Kashmiri khewa green tea in its classic original profile.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Khewa Original"
-                      data-price="10"
-                      data-image="Kasmirigreenteakhewa.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$10.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Khewa Original" data-price="10" data-image="Kasmirigreenteakhewa.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="tea" data-name="Khewa Cinnamon" data-price="10">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Cinnamon</span>
-                  <img src="Kasmirigreenteacinnamon.JPG" alt="Khewa Cinnamon" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Cinnamon</span><img src="Kasmirigreenteacinnamon.JPG" alt="Khewa Cinnamon" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Khewa Cinnamon</h3>
                   <p class="product-desc">A warm green tea blend with cinnamon-inspired flavor notes and comforting depth.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$10.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Khewa Cinnamon"
-                      data-price="10"
-                      data-image="Kasmirigreenteacinnamon.JPG"
-                      data-desc="A warm green tea blend with cinnamon-inspired flavor notes and comforting depth.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Khewa Cinnamon"
-                      data-price="10"
-                      data-image="Kasmirigreenteacinnamon.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$10.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Khewa Cinnamon" data-price="10" data-image="Kasmirigreenteacinnamon.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="tea" data-name="Khewa Serving Inspiration" data-price="10">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Serving</span>
-                  <img src="Khewagoogle.png" alt="Khewa Serving Inspiration" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Serving</span><img src="Khewagoogle.png" alt="Khewa Serving Inspiration" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Khewa Serving Inspiration</h3>
                   <p class="product-desc">A styled serving presentation image that supports the HemAth tea collection.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$10.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Khewa Serving Inspiration"
-                      data-price="10"
-                      data-image="Khewagoogle.png"
-                      data-desc="A styled serving presentation image that supports the HemAth tea collection.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Khewa Serving Inspiration"
-                      data-price="10"
-                      data-image="Khewagoogle.png">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$10.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Khewa Serving Inspiration" data-price="10" data-image="Khewagoogle.png">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="tea" data-name="Khewa Tea Display" data-price="10">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Display</span>
-                  <img src="Khewagoogle2.png" alt="Khewa Tea Display" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Display</span><img src="Khewagoogle2.png" alt="Khewa Tea Display" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Khewa Tea Display</h3>
                   <p class="product-desc">A clean tea display image that complements the khewa product showcase.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$10.00</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Khewa Tea Display"
-                      data-price="10"
-                      data-image="Khewagoogle2.png"
-                      data-desc="A clean tea display image that complements the khewa product showcase.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Khewa Tea Display"
-                      data-price="10"
-                      data-image="Khewagoogle2.png">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$10.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Khewa Tea Display" data-price="10" data-image="Khewagoogle2.png">Add to Cart</button></div>
                 </div>
               </article>
             </div>
@@ -1424,97 +961,38 @@
               <div>
                 <span class="shop-category-tag">Clothing</span>
                 <h2>HemAth Clothing Pieces</h2>
-                <p>
-                  Select garments and styled pieces that extend the HemAth collection beyond accessories and shawls.
-                </p>
+                <p>Select garments and styled pieces that extend the HemAth collection beyond accessories and shawls.</p>
               </div>
             </div>
 
             <div class="product-grid">
               <article class="product-card shop-product" data-category="clothing" data-name="Embroidered Garment" data-price="25.99">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Statement</span>
-                  <img src="Cloth1.JPG" alt="Embroidered Garment" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Statement</span><img src="Cloth1.JPG" alt="Embroidered Garment" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Embroidered Garment</h3>
                   <p class="product-desc">Statement orange piece with ornate gold embroidery details and bold presentation.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$25.99</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Embroidered Garment"
-                      data-price="25.99"
-                      data-image="Cloth1.JPG"
-                      data-desc="Statement orange piece with ornate gold embroidery details and bold presentation.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Embroidered Garment"
-                      data-price="25.99"
-                      data-image="Cloth1.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Embroidered Garment" data-price="25.99" data-image="Cloth1.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="clothing" data-name="Red Plaid Garment" data-price="25.99">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Modern</span>
-                  <img src="Cloth2.JPG" alt="Red Plaid Garment" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Modern</span><img src="Cloth2.JPG" alt="Red Plaid Garment" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Red Plaid Garment</h3>
                   <p class="product-desc">A bold red textile piece with a structured, modern silhouette and tailored feel.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$25.99</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Red Plaid Garment"
-                      data-price="25.99"
-                      data-image="Cloth2.JPG"
-                      data-desc="A bold red textile piece with a structured, modern silhouette and tailored feel.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Red Plaid Garment"
-                      data-price="25.99"
-                      data-image="Cloth2.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Red Plaid Garment" data-price="25.99" data-image="Cloth2.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
               <article class="product-card shop-product" data-category="clothing" data-name="Styled Clothing Look" data-price="25.99">
-                <div class="product-image-wrap">
-                  <span class="product-badge">Styled</span>
-                  <img src="Clothshawl.JPG" alt="Styled Clothing Look" />
-                </div>
+                <div class="product-image-wrap"><span class="product-badge">Styled</span><img src="Clothshawl.JPG" alt="Styled Clothing Look" /></div>
                 <div class="product-content">
                   <h3 class="product-title">Styled Clothing Look</h3>
                   <p class="product-desc">A styled HemAth presentation combining garment and shawl detail into one curated look.</p>
-                  <div class="product-meta">
-                    <span class="product-price">$25.99</span>
-                  </div>
-                  <div class="product-actions">
-                    <button class="btn btn-secondary quick-view-btn"
-                      data-name="Styled Clothing Look"
-                      data-price="25.99"
-                      data-image="Clothshawl.JPG"
-                      data-desc="A styled HemAth presentation combining garment and shawl detail into one curated look.">
-                      Quick View
-                    </button>
-                    <button class="btn btn-primary add-to-cart"
-                      data-name="Styled Clothing Look"
-                      data-price="25.99"
-                      data-image="Clothshawl.JPG">
-                      Add to Cart
-                    </button>
-                  </div>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Styled Clothing Look" data-price="25.99" data-image="Clothshawl.JPG">Add to Cart</button></div>
                 </div>
               </article>
             </div>
@@ -1559,24 +1037,6 @@
     </div>
   </section>
 
-  <div class="quick-view-modal" id="quick-view-modal">
-    <div class="quick-view-card">
-      <button class="quick-view-close" id="quick-view-close" aria-label="Close quick view">✕</button>
-      <div class="quick-view-image">
-        <img id="quick-view-image" src="" alt="" />
-      </div>
-      <div class="quick-view-content">
-        <h3 id="quick-view-title"></h3>
-        <div class="quick-view-price" id="quick-view-price"></div>
-        <p id="quick-view-desc"></p>
-        <div class="shop-hero-actions" style="margin-top: 0.4rem;">
-          <button class="btn btn-primary" id="quick-view-add">Add to Cart</button>
-          <button class="btn btn-secondary" id="quick-view-close-secondary">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <footer class="site-footer">
     <div class="container footer-content">
       <div>
@@ -1595,202 +1055,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    const cartItemsContainer = document.getElementById("cart-items");
-    const cartTotalElement = document.getElementById("cart-total");
-    const cartCountElement = document.getElementById("cart-count");
-    const cartItemTotalElement = document.getElementById("cart-item-total");
-    const clearCartButton = document.getElementById("clear-cart");
-    const checkoutInquiryButton = document.getElementById("checkout-inquiry");
-    const addToCartButtons = document.querySelectorAll(".add-to-cart");
-    const searchInput = document.getElementById("shop-search");
-    const categoryFilter = document.getElementById("shop-category-filter");
-    const sortSelect = document.getElementById("shop-sort");
-    const productCards = Array.from(document.querySelectorAll(".shop-product"));
-    const categorySections = document.querySelectorAll("[data-category-section]");
-
-    const quickViewModal = document.getElementById("quick-view-modal");
-    const quickViewImage = document.getElementById("quick-view-image");
-    const quickViewTitle = document.getElementById("quick-view-title");
-    const quickViewPrice = document.getElementById("quick-view-price");
-    const quickViewDesc = document.getElementById("quick-view-desc");
-    const quickViewAdd = document.getElementById("quick-view-add");
-    const quickViewClose = document.getElementById("quick-view-close");
-    const quickViewCloseSecondary = document.getElementById("quick-view-close-secondary");
-    const quickViewButtons = document.querySelectorAll(".quick-view-btn");
-
-    let cart = JSON.parse(localStorage.getItem("hemathCart")) || [];
-    let quickViewCurrentItem = null;
-
-    function saveCart() {
-      localStorage.setItem("hemathCart", JSON.stringify(cart));
-    }
-
-    function formatPrice(value) {
-      return `$${Number(value).toFixed(2)}`;
-    }
-
-    function renderCart() {
-      if (!cart.length) {
-        cartItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
-        cartTotalElement.textContent = "$0.00";
-        cartCountElement.textContent = "0";
-        cartItemTotalElement.textContent = "0";
-        return;
-      }
-
-      cartItemsContainer.innerHTML = "";
-      let total = 0;
-
-      cart.forEach((item, index) => {
-        total += Number(item.price);
-
-        const itemElement = document.createElement("div");
-        itemElement.className = "cart-item";
-        itemElement.innerHTML = `
-          <img src="${item.image}" alt="${item.name}">
-          <div class="cart-item-info">
-            <h4>${item.name}</h4>
-            <p>${formatPrice(item.price)}</p>
-          </div>
-          <button class="cart-remove" data-index="${index}" aria-label="Remove item">✕</button>
-        `;
-        cartItemsContainer.appendChild(itemElement);
-      });
-
-      cartTotalElement.textContent = formatPrice(total);
-      cartCountElement.textContent = String(cart.length);
-      cartItemTotalElement.textContent = String(cart.length);
-
-      document.querySelectorAll(".cart-remove").forEach((button) => {
-        button.addEventListener("click", () => {
-          const index = Number(button.dataset.index);
-          cart.splice(index, 1);
-          saveCart();
-          renderCart();
-        });
-      });
-    }
-
-    function addItemToCart(name, price, image) {
-      cart.push({ name, price: Number(price), image });
-      saveCart();
-      renderCart();
-    }
-
-    addToCartButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        addItemToCart(button.dataset.name, button.dataset.price, button.dataset.image);
-      });
-    });
-
-    clearCartButton.addEventListener("click", () => {
-      cart = [];
-      saveCart();
-      renderCart();
-    });
-
-    checkoutInquiryButton.addEventListener("click", () => {
-      const itemNames = cart.map(item => `${item.name} - ${formatPrice(item.price)}`).join("%0A");
-      const total = cart.reduce((sum, item) => sum + Number(item.price), 0).toFixed(2);
-      const mailtoLink = `mailto:?subject=HemAth Shop Inquiry&body=Hello HemAth,%0A%0AI am interested in the following items:%0A%0A${itemNames || "No items listed"}%0A%0ATotal: $${total}%0A%0APlease let me know the next steps for purchase.%0A`;
-      window.location.href = mailtoLink;
-    });
-
-    function openQuickView(item) {
-      quickViewCurrentItem = item;
-      quickViewImage.src = item.image;
-      quickViewImage.alt = item.name;
-      quickViewTitle.textContent = item.name;
-      quickViewPrice.textContent = formatPrice(item.price);
-      quickViewDesc.textContent = item.desc;
-      quickViewModal.classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeQuickView() {
-      quickViewModal.classList.remove("open");
-      document.body.style.overflow = "";
-      quickViewCurrentItem = null;
-    }
-
-    quickViewButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        openQuickView({
-          name: button.dataset.name,
-          price: button.dataset.price,
-          image: button.dataset.image,
-          desc: button.dataset.desc
-        });
-      });
-    });
-
-    quickViewAdd.addEventListener("click", () => {
-      if (!quickViewCurrentItem) return;
-      addItemToCart(
-        quickViewCurrentItem.name,
-        quickViewCurrentItem.price,
-        quickViewCurrentItem.image
-      );
-      closeQuickView();
-    });
-
-    quickViewClose.addEventListener("click", closeQuickView);
-    quickViewCloseSecondary.addEventListener("click", closeQuickView);
-
-    quickViewModal.addEventListener("click", (event) => {
-      if (event.target === quickViewModal) {
-        closeQuickView();
-      }
-    });
-
-    function applyFiltersAndSort() {
-      const searchTerm = searchInput.value.trim().toLowerCase();
-      const selectedCategory = categoryFilter.value;
-      const sortValue = sortSelect.value;
-
-      productCards.forEach((card) => {
-        const name = card.dataset.name.toLowerCase();
-        const category = card.dataset.category;
-        const matchesSearch = name.includes(searchTerm);
-        const matchesCategory = selectedCategory === "all" || category === selectedCategory;
-        card.style.display = matchesSearch && matchesCategory ? "" : "none";
-      });
-
-      categorySections.forEach((section) => {
-        const visibleCards = section.querySelectorAll(".shop-product:not([style*='display: none'])");
-        section.style.display = visibleCards.length ? "" : "none";
-      });
-
-      categorySections.forEach((section) => {
-        const grid = section.querySelector(".product-grid");
-        if (!grid) return;
-
-        const visibleCards = Array.from(grid.querySelectorAll(".shop-product"))
-          .filter(card => card.style.display !== "none");
-
-        visibleCards.sort((a, b) => {
-          const nameA = a.dataset.name.toLowerCase();
-          const nameB = b.dataset.name.toLowerCase();
-          const priceA = Number(a.dataset.price);
-          const priceB = Number(b.dataset.price);
-
-          if (sortValue === "low-high") return priceA - priceB;
-          if (sortValue === "high-low") return priceB - priceA;
-          if (sortValue === "name-az") return nameA.localeCompare(nameB);
-          return 0;
-        });
-
-        visibleCards.forEach((card) => grid.appendChild(card));
-      });
-    }
-
-    searchInput.addEventListener("input", applyFiltersAndSort);
-    categoryFilter.addEventListener("change", applyFiltersAndSort);
-    sortSelect.addEventListener("change", applyFiltersAndSort);
-
-    renderCart();
-    applyFiltersAndSort();
-  </script>
 </body>
 </html>
