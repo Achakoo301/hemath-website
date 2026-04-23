@@ -19,9 +19,6 @@
       background: rgba(10, 8, 14, 0.82);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 200;
     }
 
     .shop-page .logo,
@@ -169,7 +166,7 @@
 
     .shop-toolbar {
       display: grid;
-      grid-template-columns: 1.25fr 0.8fr 0.8fr auto;
+      grid-template-columns: 1.15fr 0.7fr 0.7fr auto;
       gap: 0.9rem;
       align-items: center;
       margin-bottom: 1.5rem;
@@ -262,7 +259,7 @@
       display: grid;
       gap: 0.85rem;
       margin-bottom: 1rem;
-      max-height: 420px;
+      max-height: 480px;
       overflow-y: auto;
       padding-right: 0.15rem;
     }
@@ -279,9 +276,8 @@
 
     .cart-item {
       display: grid;
-      grid-template-columns: 68px 1fr auto;
+      grid-template-columns: 68px 1fr;
       gap: 0.8rem;
-      align-items: center;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
@@ -304,25 +300,34 @@
     }
 
     .cart-item-info p {
-      margin: 0;
+      margin: 0 0 0.45rem;
       color: #f0bd62;
       font-weight: 700;
       font-size: 0.92rem;
     }
 
-    .cart-remove {
-      width: 34px;
-      height: 34px;
-      border: none;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      cursor: pointer;
-      font-size: 1rem;
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
     }
 
-    .cart-remove:hover {
-      background: rgba(255,255,255,0.16);
+    .cart-item-controls button {
+      border: none;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      padding: 0.38rem 0.65rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .cart-item-controls span {
+      min-width: 24px;
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
     }
 
     .cart-summary {
@@ -705,9 +710,7 @@
                   <h3 class="product-title">Green Shawl</h3>
                   <p class="product-desc">Detailed floral embroidery on a soft neutral base with elegant heritage styling.</p>
                   <div class="product-meta"><span class="product-price">$25.99</span></div>
-                  <div class="product-actions">
-                    <button class="btn btn-primary add-to-cart" data-name="Green Shawl" data-price="25.99" data-image="Shawlgreen.JPG">Add to Cart</button>
-                  </div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Green Shawl" data-price="25.99" data-image="Shawlgreen.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
@@ -720,9 +723,7 @@
                   <h3 class="product-title">Red Shawl</h3>
                   <p class="product-desc">Rich red textile with bold gold border detailing and a formal traditional presentation.</p>
                   <div class="product-meta"><span class="product-price">$25.99</span></div>
-                  <div class="product-actions">
-                    <button class="btn btn-primary add-to-cart" data-name="Red Shawl" data-price="25.99" data-image="Shawlred.JPG">Add to Cart</button>
-                  </div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Red Shawl" data-price="25.99" data-image="Shawlred.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
@@ -735,9 +736,7 @@
                   <h3 class="product-title">Pink Shawl</h3>
                   <p class="product-desc">Vibrant textile finished with classic embroidered edging and a striking color presentation.</p>
                   <div class="product-meta"><span class="product-price">$25.99</span></div>
-                  <div class="product-actions">
-                    <button class="btn btn-primary add-to-cart" data-name="Pink Shawl" data-price="25.99" data-image="Shawlpink.JPG">Add to Cart</button>
-                  </div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Pink Shawl" data-price="25.99" data-image="Shawlpink.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
@@ -750,9 +749,7 @@
                   <h3 class="product-title">Light Blue Shawl</h3>
                   <p class="product-desc">Soft pastel textile with elegant gold border work and refined decorative detailing.</p>
                   <div class="product-meta"><span class="product-price">$25.99</span></div>
-                  <div class="product-actions">
-                    <button class="btn btn-primary add-to-cart" data-name="Light Blue Shawl" data-price="25.99" data-image="Shawllightblue.JPG">Add to Cart</button>
-                  </div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Light Blue Shawl" data-price="25.99" data-image="Shawllightblue.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
@@ -765,9 +762,7 @@
                   <h3 class="product-title">White Shawl</h3>
                   <p class="product-desc">A minimal and graceful look with soft drape and subtle pink embroidered trim.</p>
                   <div class="product-meta"><span class="product-price">$25.99</span></div>
-                  <div class="product-actions">
-                    <button class="btn btn-primary add-to-cart" data-name="White Shawl" data-price="25.99" data-image="Shawlwhite.JPG">Add to Cart</button>
-                  </div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="White Shawl" data-price="25.99" data-image="Shawlwhite.JPG">Add to Cart</button></div>
                 </div>
               </article>
 
@@ -780,9 +775,7 @@
                   <h3 class="product-title">Shawl Showcase</h3>
                   <p class="product-desc">A featured display view of the HemAth shawl collection for signature presentation.</p>
                   <div class="product-meta"><span class="product-price">$25.99</span></div>
-                  <div class="product-actions">
-                    <button class="btn btn-primary add-to-cart" data-name="Shawl Showcase" data-price="25.99" data-image="Shawlbundle.JPG">Add to Cart</button>
-                  </div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Shawl Showcase" data-price="25.99" data-image="Shawlbundle.JPG">Add to Cart</button></div>
                 </div>
               </article>
             </div>
