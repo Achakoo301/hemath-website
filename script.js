@@ -52,13 +52,9 @@ function renderCart() {
 
   cartItemsContainer.innerHTML = "";
   let total = 0;
-  let itemCount = 0;
 
   cart.forEach((item, index) => {
-    const quantity = Number(item.quantity || 1);
-    const lineTotal = Number(item.price) * quantity;
-    total += lineTotal;
-    itemCount += quantity;
+    total += Number(item.price);
 
     const itemElement = document.createElement("div");
     itemElement.className = "cart-item";
@@ -67,44 +63,20 @@ function renderCart() {
       <div class="cart-item-info">
         <h4>${item.name}</h4>
         <p>${formatPrice(item.price)}</p>
-        <div class="cart-item-controls">
-          <button type="button" data-action="decrease" data-index="${index}">−</button>
-          <span>${quantity}</span>
-          <button type="button" data-action="increase" data-index="${index}">+</button>
-          <button type="button" data-action="remove" data-index="${index}">Remove</button>
-        </div>
       </div>
+      <button class="cart-remove" data-index="${index}" aria-label="Remove item">✕</button>
     `;
     cartItemsContainer.appendChild(itemElement);
   });
 
   if (cartTotalElement) cartTotalElement.textContent = formatPrice(total);
-  if (cartCountElement) cartCountElement.textContent = String(itemCount);
-  if (cartItemTotalElement) cartItemTotalElement.textContent = String(itemCount);
+  if (cartCountElement) cartCountElement.textContent = String(cart.length);
+  if (cartItemTotalElement) cartItemTotalElement.textContent = String(cart.length);
 
-  const cartActionButtons = cartItemsContainer.querySelectorAll("[data-action]");
-  cartActionButtons.forEach((button) => {
+  document.querySelectorAll(".cart-remove").forEach((button) => {
     button.addEventListener("click", () => {
-      const action = button.dataset.action;
       const index = Number(button.dataset.index);
-      const item = cart[index];
-      if (!item) return;
-
-      if (action === "increase") {
-        item.quantity = Number(item.quantity || 1) + 1;
-      }
-
-      if (action === "decrease") {
-        item.quantity = Number(item.quantity || 1) - 1;
-        if (item.quantity <= 0) {
-          cart.splice(index, 1);
-        }
-      }
-
-      if (action === "remove") {
-        cart.splice(index, 1);
-      }
-
+      cart.splice(index, 1);
       saveCart();
       renderCart();
     });
@@ -112,17 +84,7 @@ function renderCart() {
 }
 
 function addItemToCart(name, price, image) {
-  const existingItem = cart.find((item) => item.name === name);
-  if (existingItem) {
-    existingItem.quantity = Number(existingItem.quantity || 1) + 1;
-  } else {
-    cart.push({
-      name,
-      price: Number(price),
-      image,
-      quantity: 1
-    });
-  }
+  cart.push({ name, price: Number(price), image });
   saveCart();
   renderCart();
 }
@@ -143,17 +105,9 @@ if (clearCartButton) {
 
 if (checkoutInquiryButton) {
   checkoutInquiryButton.addEventListener("click", () => {
-    const itemLines = cart.map((item) => {
-      const quantity = Number(item.quantity || 1);
-      const lineTotal = Number(item.price) * quantity;
-      return `${item.name} x${quantity} - ${formatPrice(lineTotal)}`;
-    }).join("%0A");
-
-    const total = cart.reduce((sum, item) => {
-      return sum + (Number(item.price) * Number(item.quantity || 1));
-    }, 0).toFixed(2);
-
-    const mailtoLink = `mailto:?subject=HemAth Shop Inquiry&body=Hello HemAth,%0A%0AI am interested in the following items:%0A%0A${itemLines || "No items listed"}%0A%0ATotal: $${total}%0A%0APlease let me know the next steps for purchase.%0A`;
+    const itemNames = cart.map(item => `${item.name} - ${formatPrice(item.price)}`).join("%0A");
+    const total = cart.reduce((sum, item) => sum + Number(item.price), 0).toFixed(2);
+    const mailtoLink = `mailto:?subject=HemAth Shop Inquiry&body=Hello HemAth,%0A%0AI am interested in the following items:%0A%0A${itemNames || "No items listed"}%0A%0ATotal: $${total}%0A%0APlease let me know the next steps for purchase.%0A`;
     window.location.href = mailtoLink;
   });
 }
@@ -183,7 +137,7 @@ function applyFiltersAndSort() {
     if (!grid) return;
 
     const visibleCards = Array.from(grid.querySelectorAll(".shop-product"))
-      .filter((card) => card.style.display !== "none");
+      .filter(card => card.style.display !== "none");
 
     visibleCards.sort((a, b) => {
       const nameA = a.dataset.name.toLowerCase();
