@@ -179,7 +179,7 @@ function applyFiltersAndSort() {
   });
 
   categorySections.forEach((section) => {
-    const grid = section.querySelector(".product-grid");
+    const grid = section.querySelector(".amazon-product-grid");
     if (!grid) return;
 
     const visibleCards = Array.from(grid.querySelectorAll(".shop-product"))
