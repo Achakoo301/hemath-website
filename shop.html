@@ -1,94 +1,1052 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop | HemAth</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HemAth | Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .shop-page {
+      background:
+        radial-gradient(circle at top left, rgba(181, 67, 96, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(214, 163, 74, 0.12), transparent 26%),
+        linear-gradient(180deg, #0f0a16 0%, #130d1d 38%, #17101f 100%);
+      color: #f5efe8;
+      min-height: 100vh;
+    }
+
+    .shop-page .site-header {
+      background: rgba(10, 8, 14, 0.82);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .shop-page .logo,
+    .shop-page .site-nav a {
+      color: #fff;
+    }
+
+    .shop-page .site-nav a.active,
+    .shop-page .site-nav a:hover {
+      color: #f0bd62;
+    }
+
+    .shop-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 5.5rem 0 3.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .shop-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(8, 7, 12, 0.88) 0%, rgba(8, 7, 12, 0.68) 38%, rgba(8, 7, 12, 0.38) 100%),
+        url("Shawlhemathsign.JPG") center/cover no-repeat;
+      opacity: 0.95;
+    }
+
+    .shop-hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -120px;
+      top: -120px;
+      background: radial-gradient(circle, rgba(240,189,98,0.22), transparent 70%);
+      pointer-events: none;
+    }
+
+    .shop-hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .shop-hero-copy .section-label {
+      color: #f0bd62;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+    }
+
+    .shop-hero-copy h1 {
+      font-size: clamp(2.3rem, 4vw, 4.2rem);
+      line-height: 1.08;
+      margin: 0 0 1rem;
+      color: #fff;
+      max-width: 820px;
+    }
+
+    .shop-hero-copy p {
+      color: rgba(255,255,255,0.86);
+      max-width: 700px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.4rem;
+    }
+
+    .shop-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .shop-hero-actions .btn {
+      border: none;
+      cursor: pointer;
+    }
+
+    .shop-hero-actions .btn-primary {
+      background: linear-gradient(135deg, #f0bd62, #c98b2b);
+      color: #24170a;
+      box-shadow: 0 16px 36px rgba(201, 139, 43, 0.25);
+    }
+
+    .shop-hero-actions .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .shop-hero-panel {
+      position: relative;
+      z-index: 2;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 26px;
+      padding: 1.4rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.22);
+    }
+
+    .shop-hero-panel h3 {
+      margin: 0 0 0.85rem;
+      color: #fff;
+      font-size: 1.15rem;
+    }
+
+    .shop-hero-panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .shop-hero-panel li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.96rem;
+    }
+
+    .shop-hero-panel span {
+      color: #f0bd62;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .shop-toolbar-wrap {
+      padding: 1.6rem 0 0.5rem;
+    }
+
+    .shop-toolbar {
+      display: grid;
+      grid-template-columns: 1.15fr 0.7fr 0.7fr auto;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .shop-search,
+    .shop-select {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      border-radius: 16px;
+      padding: 0.95rem 1rem;
+      font-size: 0.96rem;
+      width: 100%;
+      outline: none;
+    }
+
+    .shop-select option {
+      color: #111;
+    }
+
+    .cart-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      justify-content: center;
+      padding: 0.95rem 1.1rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(240,189,98,0.18), rgba(240,189,98,0.08));
+      border: 1px solid rgba(240,189,98,0.22);
+      color: #fff5df;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .cart-pill-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 0.4rem;
+      border-radius: 999px;
+      background: #f0bd62;
+      color: #24170a;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .shop-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 1.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .shop-main {
+      min-width: 0;
+    }
+
+    .shop-cart-sidebar {
+      position: sticky;
+      top: 98px;
+      align-self: start;
+    }
+
+    .shop-cart-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.045));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 26px;
+      padding: 1.2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.22);
+      backdrop-filter: blur(10px);
+    }
+
+    .shop-cart-box h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.35rem;
+      color: #fff;
+    }
+
+    .shop-cart-subtext {
+      margin: 0 0 1rem;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .cart-items {
+      display: grid;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+      max-height: 480px;
+      overflow-y: auto;
+      padding-right: 0.15rem;
+    }
+
+    .empty-cart {
+      color: rgba(255,255,255,0.68);
+      background: rgba(255,255,255,0.04);
+      border: 1px dashed rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 1rem;
+      text-align: center;
+      margin: 0;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      gap: 0.8rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 0.7rem;
+    }
+
+    .cart-item img {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      background: #201728;
+    }
+
+    .cart-item-info h4 {
+      margin: 0 0 0.2rem;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .cart-item-info p {
+      margin: 0 0 0.45rem;
+      color: #f0bd62;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .cart-item-controls button {
+      border: none;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      padding: 0.38rem 0.65rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .cart-item-controls span {
+      min-width: 24px;
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .cart-summary {
+      display: grid;
+      gap: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cart-summary-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: rgba(255,255,255,0.88);
+      font-size: 1rem;
+    }
+
+    .cart-summary-row strong {
+      color: #fff;
+      font-size: 1.12rem;
+    }
+
+    .cart-buttons {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.4rem;
+    }
+
+    .cart-buttons .btn {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cart-buttons .btn-primary {
+      background: linear-gradient(135deg, #f0bd62, #c98b2b);
+      color: #24170a;
+    }
+
+    .cart-buttons .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .shop-category {
+      margin-bottom: 2rem;
+    }
+
+    .shop-category-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .shop-category-header h2 {
+      margin: 0.2rem 0 0;
+      color: #fff;
+      font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+    }
+
+    .shop-category-header p {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      max-width: 720px;
+    }
+
+    .shop-category-tag {
+      display: inline-flex;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(240,189,98,0.12);
+      color: #f0bd62;
+      border: 1px solid rgba(240,189,98,0.18);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .product-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px rgba(0,0,0,0.26);
+      border-color: rgba(240,189,98,0.28);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #1a1420;
+    }
+
+    .product-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(12,10,18,0.78);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 0.38rem 0.72rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .product-content {
+      padding: 1rem 1rem 1.05rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      flex: 1;
+    }
+
+    .product-title {
+      font-size: 1.1rem;
+      line-height: 1.35;
+      margin: 0;
+      color: #fff;
+    }
+
+    .product-desc {
+      margin: 0;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.94rem;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .product-price {
+      color: #f0bd62;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 0.6rem;
+      width: 100%;
+    }
+
+    .product-actions .btn {
+      border: none;
+      cursor: pointer;
+      flex: 1;
+      font-size: 0.92rem;
+    }
+
+    .product-actions .btn-primary {
+      background: linear-gradient(135deg, #f0bd62, #c98b2b);
+      color: #24170a;
+    }
+
+    .product-actions .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .showcase-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .showcase-strip.five {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .showcase-tile {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      min-height: 220px;
+      box-shadow: 0 18px 38px rgba(0,0,0,0.18);
+    }
+
+    .showcase-tile img {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .shop-note-band {
+      margin: 2.3rem 0 0;
+      padding: 1.4rem 1.2rem;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(240,189,98,0.12), rgba(255,255,255,0.05));
+      border: 1px solid rgba(240,189,98,0.14);
+      color: rgba(255,255,255,0.86);
+      line-height: 1.8;
+    }
+
+    .shop-note-band strong {
+      color: #fff;
+    }
+
+    @media (max-width: 1180px) {
+      .shop-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .shop-cart-sidebar {
+        position: static;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .showcase-strip.five {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 980px) {
+      .shop-hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .shop-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-strip,
+      .showcase-strip.five {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .product-grid,
+      .showcase-strip,
+      .showcase-strip.five {
+        grid-template-columns: 1fr;
+      }
+
+      .shop-hero {
+        padding-top: 4.7rem;
+      }
+
+      .product-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+<body class="shop-page">
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">HemAth</a>
 
-<body>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">
+        ☰
+      </button>
 
-<header class="site-header">
-  <div class="container nav-container">
-    <a href="index.html" class="logo">HemAth</a>
-
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="artisans.html">Artisans</a>
-      <a href="shop.html" class="active">Shop</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section class="page-hero">
-  <div class="container">
-    <h1>Shop HemAth</h1>
-    <p>Support artisans by purchasing handmade products</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-
-    <h2>Shawls</h2>
-    <div class="product-grid">
-
-      <div class="product-card">
-        <img src="Shawlgreen.JPG">
-        <h3>Green Shawl</h3>
-        <p>$25.99</p>
-        <button class="add-to-cart" data-name="Green Shawl" data-price="25.99">Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <img src="Shawlred.JPG">
-        <h3>Red Shawl</h3>
-        <p>$25.99</p>
-        <button class="add-to-cart" data-name="Red Shawl" data-price="25.99">Add to Cart</button>
-      </div>
-
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="artisans.html">Artisans</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <h2>Aathors</h2>
-    <div class="product-grid">
-
-      <div class="product-card">
-        <img src="Aathor1.JPG">
-        <h3>Aathor</h3>
-        <p>$20</p>
-        <button class="add-to-cart" data-name="Aathor" data-price="20">Add to Cart</button>
+  <section class="shop-hero">
+    <div class="container shop-hero-content">
+      <div class="shop-hero-copy">
+        <p class="section-label">HemAth Shop</p>
+        <h1>Shop handcrafted Kashmiri heritage with a modern, easy-to-browse experience.</h1>
+        <p>
+          Explore embroidered shawls, traditional Aathors, artisan accessories, Kashmiri khewa tea,
+          and clothing pieces that reflect craftsmanship, culture, and community impact.
+        </p>
+        <div class="shop-hero-actions">
+          <a href="#shop-products" class="btn btn-primary">Start Shopping</a>
+          <a href="about.html" class="btn btn-secondary">Learn the Mission</a>
+        </div>
       </div>
 
+      <div class="shop-hero-panel">
+        <h3>Featured Collections</h3>
+        <ul>
+          <li><span>Aathor</span> Traditional handcrafted accessories</li>
+          <li><span>Shawls</span> Embroidered textiles and heritage styling</li>
+          <li><span>Khewa</span> Kashmiri green tea blends</li>
+          <li><span>Clothing</span> Garments and curated presentation pieces</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <h2>Khewa Tea</h2>
-    <div class="product-grid">
+  <section class="shop-toolbar-wrap" id="shop-products">
+    <div class="container">
+      <div class="shop-toolbar">
+        <input type="text" id="shop-search" class="shop-search" placeholder="Search products, shawls, Aathors, tea..." />
 
-      <div class="product-card">
-        <img src="Kasmirigreenteakhewa.JPG">
-        <h3>Khewa</h3>
-        <p>$10</p>
-        <button class="add-to-cart" data-name="Khewa" data-price="10">Add to Cart</button>
+        <select id="shop-category-filter" class="shop-select">
+          <option value="all">All categories</option>
+          <option value="shawls">Shawls</option>
+          <option value="aathor">Aathor</option>
+          <option value="tea">Tea</option>
+          <option value="clothing">Clothing</option>
+        </select>
+
+        <select id="shop-sort" class="shop-select">
+          <option value="default">Sort by</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+          <option value="name-az">Name: A to Z</option>
+        </select>
+
+        <div class="cart-pill">
+          <span>Cart</span>
+          <span class="cart-pill-count" id="cart-count">0</span>
+        </div>
       </div>
 
+      <div class="shop-shell">
+        <main class="shop-main">
+          <section class="shop-category" data-category-section="shawls">
+            <div class="shop-category-header">
+              <div>
+                <span class="shop-category-tag">Shawls</span>
+                <h2>Embroidered Shawl Collection</h2>
+                <p>Elegant shawls shaped by traditional detail, timeless design, and Kashmiri craftsmanship.</p>
+              </div>
+            </div>
+
+            <div class="product-grid">
+              <article class="product-card shop-product" data-category="shawls" data-name="Green Shawl" data-price="25.99">
+                <div class="product-image-wrap">
+                  <span class="product-badge">Handcrafted</span>
+                  <img src="Shawlgreen.JPG" alt="Green Shawl" />
+                </div>
+                <div class="product-content">
+                  <h3 class="product-title">Green Shawl</h3>
+                  <p class="product-desc">Detailed floral embroidery on a soft neutral base with elegant heritage styling.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Green Shawl" data-price="25.99" data-image="Shawlgreen.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="shawls" data-name="Red Shawl" data-price="25.99">
+                <div class="product-image-wrap">
+                  <span class="product-badge">Textile</span>
+                  <img src="Shawlred.JPG" alt="Red Shawl" />
+                </div>
+                <div class="product-content">
+                  <h3 class="product-title">Red Shawl</h3>
+                  <p class="product-desc">Rich red textile with bold gold border detailing and a formal traditional presentation.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Red Shawl" data-price="25.99" data-image="Shawlred.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="shawls" data-name="Pink Shawl" data-price="25.99">
+                <div class="product-image-wrap">
+                  <span class="product-badge">Featured</span>
+                  <img src="Shawlpink.JPG" alt="Pink Shawl" />
+                </div>
+                <div class="product-content">
+                  <h3 class="product-title">Pink Shawl</h3>
+                  <p class="product-desc">Vibrant textile finished with classic embroidered edging and a striking color presentation.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Pink Shawl" data-price="25.99" data-image="Shawlpink.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="shawls" data-name="Light Blue Shawl" data-price="25.99">
+                <div class="product-image-wrap">
+                  <span class="product-badge">Elegant</span>
+                  <img src="Shawllightblue.JPG" alt="Light Blue Shawl" />
+                </div>
+                <div class="product-content">
+                  <h3 class="product-title">Light Blue Shawl</h3>
+                  <p class="product-desc">Soft pastel textile with elegant gold border work and refined decorative detailing.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Light Blue Shawl" data-price="25.99" data-image="Shawllightblue.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="shawls" data-name="White Shawl" data-price="25.99">
+                <div class="product-image-wrap">
+                  <span class="product-badge">Minimal</span>
+                  <img src="Shawlwhite.JPG" alt="White Shawl" />
+                </div>
+                <div class="product-content">
+                  <h3 class="product-title">White Shawl</h3>
+                  <p class="product-desc">A minimal and graceful look with soft drape and subtle pink embroidered trim.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="White Shawl" data-price="25.99" data-image="Shawlwhite.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="shawls" data-name="Shawl Showcase" data-price="25.99">
+                <div class="product-image-wrap">
+                  <span class="product-badge">Display</span>
+                  <img src="Shawlbundle.JPG" alt="Shawl Showcase" />
+                </div>
+                <div class="product-content">
+                  <h3 class="product-title">Shawl Showcase</h3>
+                  <p class="product-desc">A featured display view of the HemAth shawl collection for signature presentation.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Shawl Showcase" data-price="25.99" data-image="Shawlbundle.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="showcase-strip">
+              <div class="showcase-tile"><img src="Shawlhemathsign.JPG" alt="HemAth Shawl Display" /></div>
+              <div class="showcase-tile"><img src="Shawlbundle.JPG" alt="Shawl Bundle Showcase" /></div>
+              <div class="showcase-tile"><img src="geinvolved-1.JPG" alt="HemAth Community" /></div>
+            </div>
+          </section>
+
+          <section class="shop-category" data-category-section="aathor">
+            <div class="shop-category-header">
+              <div>
+                <span class="shop-category-tag">Aathor</span>
+                <h2>Traditional Aathor Collection</h2>
+                <p>Handmade pieces inspired by a cherished Kashmiri tradition, along with artisan accessory presentation.</p>
+              </div>
+            </div>
+
+            <div class="product-grid">
+              <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 1" data-price="20">
+                <div class="product-image-wrap"><span class="product-badge">Traditional</span><img src="Aathor1.JPG" alt="Aathor Style 1" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Aathor Style 1</h3>
+                  <p class="product-desc">Traditional red-bead Aathor with a handcrafted tassel silhouette and elegant balance.</p>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 1" data-price="20" data-image="Aathor1.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 2" data-price="20">
+                <div class="product-image-wrap"><span class="product-badge">Heritage</span><img src="Aathor2.JPG" alt="Aathor Style 2" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Aathor Style 2</h3>
+                  <p class="product-desc">Elegant multicolor chain design with traditional tassel finishing and festive detail.</p>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 2" data-price="20" data-image="Aathor2.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 3" data-price="20">
+                <div class="product-image-wrap"><span class="product-badge">Blue Detail</span><img src="Aathor3.JPG" alt="Aathor Style 3" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Aathor Style 3</h3>
+                  <p class="product-desc">Blue-bead handcrafted Aathor with ornamental bead cap detail and bold artisan contrast.</p>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 3" data-price="20" data-image="Aathor3.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 4" data-price="20">
+                <div class="product-image-wrap"><span class="product-badge">Classic</span><img src="Aathor4.JPG" alt="Aathor Style 4" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Aathor Style 4</h3>
+                  <p class="product-desc">Structured red tassel design with traditional cone cap detail and handcrafted flow.</p>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 4" data-price="20" data-image="Aathor4.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 5" data-price="20">
+                <div class="product-image-wrap"><span class="product-badge">Compact</span><img src="Aathor5.JPG" alt="Aathor Style 5" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Aathor Style 5</h3>
+                  <p class="product-desc">Compact tassel styling with clustered red beading and traditional handcrafted presence.</p>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 5" data-price="20" data-image="Aathor5.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="aathor" data-name="Aathor Style 6" data-price="20">
+                <div class="product-image-wrap"><span class="product-badge">Long Chain</span><img src="Aathor6.JPG" alt="Aathor Style 6" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Aathor Style 6</h3>
+                  <p class="product-desc">Long red chain Aathor with traditional tassel proportions and ceremonial character.</p>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Style 6" data-price="20" data-image="Aathor6.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="aathor" data-name="Beaded Earrings" data-price="20">
+                <div class="product-image-wrap"><span class="product-badge">Accessory</span><img src="Aathor7.JPG" alt="Beaded Earrings" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Beaded Earrings</h3>
+                  <p class="product-desc">Light blue artisan earrings that complement the HemAth accessory collection.</p>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Beaded Earrings" data-price="20" data-image="Aathor7.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="aathor" data-name="Aathor Collection Display" data-price="20">
+                <div class="product-image-wrap"><span class="product-badge">Collection</span><img src="Aathorbundle.JPG" alt="Aathor Collection Display" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Aathor Collection Display</h3>
+                  <p class="product-desc">A featured look at multiple handmade Aathor designs presented together.</p>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Collection Display" data-price="20" data-image="Aathorbundle.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="aathor" data-name="Aathor Materials Showcase" data-price="20">
+                <div class="product-image-wrap"><span class="product-badge">Craft Detail</span><img src="Aathorbundlebox.JPG" alt="Aathor Materials Showcase" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Aathor Materials Showcase</h3>
+                  <p class="product-desc">A closer look at the materials and beadwork behind HemAth’s handcrafted accessory line.</p>
+                  <div class="product-meta"><span class="product-price">$20.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Aathor Materials Showcase" data-price="20" data-image="Aathorbundlebox.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="showcase-strip five">
+              <div class="showcase-tile"><img src="Aathorshawl1.JPG" alt="Aathor on Shawl 1" /></div>
+              <div class="showcase-tile"><img src="Aathorshawl2.JPG" alt="Aathor on Shawl 2" /></div>
+              <div class="showcase-tile"><img src="Aathorshawlbundle.JPG" alt="Aathor Shawl Bundle" /></div>
+              <div class="showcase-tile"><img src="Earingbundle.JPG" alt="Earring Bundle" /></div>
+              <div class="showcase-tile"><img src="Pinkblueshawlearshowcase.JPG" alt="Pink and Blue Shawl Ear Showcase" /></div>
+            </div>
+          </section>
+
+          <section class="shop-category" data-category-section="tea">
+            <div class="shop-category-header">
+              <div>
+                <span class="shop-category-tag">Tea</span>
+                <h2>Kashmiri Khewa Tea</h2>
+                <p>Traditional green tea blends presented with warmth, flavor, and cultural connection.</p>
+              </div>
+            </div>
+
+            <div class="product-grid">
+              <article class="product-card shop-product" data-category="tea" data-name="Khewa Original" data-price="10">
+                <div class="product-image-wrap"><span class="product-badge">Original</span><img src="Kasmirigreenteakhewa.JPG" alt="Khewa Original" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Khewa Original</h3>
+                  <p class="product-desc">Authentic Kashmiri khewa green tea in its classic original profile.</p>
+                  <div class="product-meta"><span class="product-price">$10.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Khewa Original" data-price="10" data-image="Kasmirigreenteakhewa.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="tea" data-name="Khewa Cinnamon" data-price="10">
+                <div class="product-image-wrap"><span class="product-badge">Cinnamon</span><img src="Kasmirigreenteacinnamon.JPG" alt="Khewa Cinnamon" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Khewa Cinnamon</h3>
+                  <p class="product-desc">A warm green tea blend with cinnamon-inspired flavor notes and comforting depth.</p>
+                  <div class="product-meta"><span class="product-price">$10.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Khewa Cinnamon" data-price="10" data-image="Kasmirigreenteacinnamon.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="tea" data-name="Khewa Serving Inspiration" data-price="10">
+                <div class="product-image-wrap"><span class="product-badge">Serving</span><img src="Khewagoogle.png" alt="Khewa Serving Inspiration" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Khewa Serving Inspiration</h3>
+                  <p class="product-desc">A styled serving presentation image that supports the HemAth tea collection.</p>
+                  <div class="product-meta"><span class="product-price">$10.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Khewa Serving Inspiration" data-price="10" data-image="Khewagoogle.png">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="tea" data-name="Khewa Tea Display" data-price="10">
+                <div class="product-image-wrap"><span class="product-badge">Display</span><img src="Khewagoogle2.png" alt="Khewa Tea Display" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Khewa Tea Display</h3>
+                  <p class="product-desc">A clean tea display image that complements the khewa product showcase.</p>
+                  <div class="product-meta"><span class="product-price">$10.00</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Khewa Tea Display" data-price="10" data-image="Khewagoogle2.png">Add to Cart</button></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="shop-category" data-category-section="clothing">
+            <div class="shop-category-header">
+              <div>
+                <span class="shop-category-tag">Clothing</span>
+                <h2>HemAth Clothing Pieces</h2>
+                <p>Select garments and styled pieces that extend the HemAth collection beyond accessories and shawls.</p>
+              </div>
+            </div>
+
+            <div class="product-grid">
+              <article class="product-card shop-product" data-category="clothing" data-name="Embroidered Garment" data-price="25.99">
+                <div class="product-image-wrap"><span class="product-badge">Statement</span><img src="Cloth1.JPG" alt="Embroidered Garment" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Embroidered Garment</h3>
+                  <p class="product-desc">Statement orange piece with ornate gold embroidery details and bold presentation.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Embroidered Garment" data-price="25.99" data-image="Cloth1.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="clothing" data-name="Red Plaid Garment" data-price="25.99">
+                <div class="product-image-wrap"><span class="product-badge">Modern</span><img src="Cloth2.JPG" alt="Red Plaid Garment" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Red Plaid Garment</h3>
+                  <p class="product-desc">A bold red textile piece with a structured, modern silhouette and tailored feel.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Red Plaid Garment" data-price="25.99" data-image="Cloth2.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+
+              <article class="product-card shop-product" data-category="clothing" data-name="Styled Clothing Look" data-price="25.99">
+                <div class="product-image-wrap"><span class="product-badge">Styled</span><img src="Clothshawl.JPG" alt="Styled Clothing Look" /></div>
+                <div class="product-content">
+                  <h3 class="product-title">Styled Clothing Look</h3>
+                  <p class="product-desc">A styled HemAth presentation combining garment and shawl detail into one curated look.</p>
+                  <div class="product-meta"><span class="product-price">$25.99</span></div>
+                  <div class="product-actions"><button class="btn btn-primary add-to-cart" data-name="Styled Clothing Look" data-price="25.99" data-image="Clothshawl.JPG">Add to Cart</button></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <div class="shop-note-band">
+            <strong>Note:</strong> This shop section is a working e-commerce showcase for HemAth’s future product experience.
+            It is designed to help present artisan collections clearly, let visitors browse simply, and support the nonprofit’s
+            long-term goal of making products easier to discover and purchase online.
+          </div>
+        </main>
+
+        <aside class="shop-cart-sidebar">
+          <div class="shop-cart-box">
+            <h2>Your Cart</h2>
+            <p class="shop-cart-subtext">
+              Add products while browsing. This cart stays on the page and is saved in your browser.
+            </p>
+
+            <div class="cart-items" id="cart-items">
+              <p class="empty-cart">Your cart is empty.</p>
+            </div>
+
+            <div class="cart-summary">
+              <div class="cart-summary-row">
+                <span>Items</span>
+                <strong id="cart-item-total">0</strong>
+              </div>
+              <div class="cart-summary-row">
+                <span>Total</span>
+                <strong id="cart-total">$0.00</strong>
+              </div>
+
+              <div class="cart-buttons">
+                <button class="btn btn-primary" id="checkout-inquiry">Checkout Inquiry</button>
+                <button class="btn btn-secondary" id="clear-cart">Clear Cart</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <h3>HemAth</h3>
+        <p>Handmade heritage. Thoughtful design. Community impact.</p>
+      </div>
 
-<section class="section">
-  <div class="container">
-    <h2>Cart</h2>
-    <div id="cart-items"></div>
-    <h3>Total: $<span id="cart-total">0</span></h3>
-    <button id="clear-cart">Clear Cart</button>
-  </div>
-</section>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="artisans.html">Artisans</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
