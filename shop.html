@@ -1,308 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HemAth | Shop</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | HemAth</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="amazon-shop-page">
-  <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">HemAth</a>
 
-      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">
-        ☰
-      </button>
+<body>
 
-      <nav class="site-nav" id="site-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="artisans.html">Artisans</a>
-        <a href="shop.html" class="active">Shop</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="site-header">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">HemAth</a>
+
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="artisans.html">Artisans</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Shop HemAth</h1>
+    <p>Support artisans by purchasing handmade products</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <h2>Shawls</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="Shawlgreen.JPG">
+        <h3>Green Shawl</h3>
+        <p>$25.99</p>
+        <button class="add-to-cart" data-name="Green Shawl" data-price="25.99">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="Shawlred.JPG">
+        <h3>Red Shawl</h3>
+        <p>$25.99</p>
+        <button class="add-to-cart" data-name="Red Shawl" data-price="25.99">Add to Cart</button>
+      </div>
+
     </div>
-  </header>
 
-  <section class="amazon-hero">
-    <div class="container amazon-hero-inner">
-      <div class="amazon-hero-copy">
-        <p class="amazon-kicker">HemAth Shop</p>
-        <h1>Shop handmade Kashmiri products in a simple, modern storefront</h1>
-        <p>
-          Browse Aathors, embroidered shawls, tea, and clothing in a cleaner shopping experience
-          inspired by large e-commerce layouts while still reflecting HemAth’s nonprofit mission.
-        </p>
+    <h2>Aathors</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="Aathor1.JPG">
+        <h3>Aathor</h3>
+        <p>$20</p>
+        <button class="add-to-cart" data-name="Aathor" data-price="20">Add to Cart</button>
       </div>
 
-      <div class="amazon-hero-card">
-        <h3>Current pricing</h3>
-        <ul>
-          <li><span>Aathors</span><strong>$20.00</strong></li>
-          <li><span>Shawls</span><strong>$25.99</strong></li>
-          <li><span>Khewa Tea</span><strong>$10.00</strong></li>
-          <li><span>Clothing</span><strong>$25.99</strong></li>
-        </ul>
-      </div>
     </div>
-  </section>
 
-  <section class="amazon-toolbar-wrap" id="shop-products">
-    <div class="container">
-      <div class="amazon-toolbar">
-        <input type="text" id="shop-search" class="amazon-search" placeholder="Search products..." />
+    <h2>Khewa Tea</h2>
+    <div class="product-grid">
 
-        <select id="shop-category-filter" class="amazon-select">
-          <option value="all">All categories</option>
-          <option value="shawls">Shawls</option>
-          <option value="aathor">Aathor</option>
-          <option value="tea">Tea</option>
-          <option value="clothing">Clothing</option>
-        </select>
-
-        <select id="shop-sort" class="amazon-select">
-          <option value="default">Sort by</option>
-          <option value="low-high">Price: Low to High</option>
-          <option value="high-low">Price: High to Low</option>
-          <option value="name-az">Name: A to Z</option>
-        </select>
-
-        <div class="amazon-cart-summary-pill">
-          <span>Cart</span>
-          <span class="amazon-cart-count" id="cart-count">0</span>
-        </div>
+      <div class="product-card">
+        <img src="Kasmirigreenteakhewa.JPG">
+        <h3>Khewa</h3>
+        <p>$10</p>
+        <button class="add-to-cart" data-name="Khewa" data-price="10">Add to Cart</button>
       </div>
 
-      <div class="amazon-shop-shell">
-        <main class="amazon-shop-main">
-          <section class="amazon-section-block" data-category-section="shawls">
-            <div class="amazon-section-heading">
-              <div>
-                <p class="amazon-section-label">Shawls</p>
-                <h2>Embroidered Shawls</h2>
-                <p>Elegant shawls shaped by traditional detail, heritage design, and Kashmiri craftsmanship.</p>
-              </div>
-            </div>
-
-            <div class="amazon-product-grid">
-              <article class="amazon-product-card shop-product" data-category="shawls" data-name="Green Shawl" data-price="25.99">
-                <div class="amazon-product-image-wrap">
-                  <img src="Shawlgreen.JPG" alt="Green Shawl" />
-                </div>
-                <div class="amazon-product-body">
-                  <h3>Green Shawl</h3>
-                  <p>Detailed floral embroidery on a soft neutral base.</p>
-                  <div class="amazon-product-rating">★★★★☆ <span>4.6</span></div>
-                  <div class="amazon-product-price">$25.99</div>
-                  <button class="btn btn-primary add-to-cart" data-name="Green Shawl" data-price="25.99" data-image="Shawlgreen.JPG">Add to Cart</button>
-                </div>
-              </article>
-
-              <article class="amazon-product-card shop-product" data-category="shawls" data-name="Red Shawl" data-price="25.99">
-                <div class="amazon-product-image-wrap">
-                  <img src="Shawlred.JPG" alt="Red Shawl" />
-                </div>
-                <div class="amazon-product-body">
-                  <h3>Red Shawl</h3>
-                  <p>Rich red textile with bold gold border detailing.</p>
-                  <div class="amazon-product-rating">★★★★☆ <span>4.5</span></div>
-                  <div class="amazon-product-price">$25.99</div>
-                  <button class="btn btn-primary add-to-cart" data-name="Red Shawl" data-price="25.99" data-image="Shawlred.JPG">Add to Cart</button>
-                </div>
-              </article>
-
-              <article class="amazon-product-card shop-product" data-category="shawls" data-name="Pink Shawl" data-price="25.99">
-                <div class="amazon-product-image-wrap">
-                  <img src="Shawlpink.JPG" alt="Pink Shawl" />
-                </div>
-                <div class="amazon-product-body">
-                  <h3>Pink Shawl</h3>
-                  <p>Vibrant textile finished with classic embroidered edging.</p>
-                  <div class="amazon-product-rating">★★★★★ <span>4.8</span></div>
-                  <div class="amazon-product-price">$25.99</div>
-                  <button class="btn btn-primary add-to-cart" data-name="Pink Shawl" data-price="25.99" data-image="Shawlpink.JPG">Add to Cart</button>
-                </div>
-              </article>
-
-              <article class="amazon-product-card shop-product" data-category="shawls" data-name="Light Blue Shawl" data-price="25.99">
-                <div class="amazon-product-image-wrap">
-                  <img src="Shawllightblue.JPG" alt="Light Blue Shawl" />
-                </div>
-                <div class="amazon-product-body">
-                  <h3>Light Blue Shawl</h3>
-                  <p>Soft pastel textile with elegant gold border work.</p>
-                  <div class="amazon-product-rating">★★★★☆ <span>4.4</span></div>
-                  <div class="amazon-product-price">$25.99</div>
-                  <button class="btn btn-primary add-to-cart" data-name="Light Blue Shawl" data-price="25.99" data-image="Shawllightblue.JPG">Add to Cart</button>
-                </div>
-              </article>
-
-              <article class="amazon-product-card shop-product" data-category="shawls" data-name="White Shawl" data-price="25.99">
-                <div class="amazon-product-image-wrap">
-                  <img src="Shawlwhite.JPG" alt="White Shawl" />
-                </div>
-                <div class="amazon-product-body">
-                  <h3>White Shawl</h3>
-                  <p>A minimal and graceful look with soft drape and subtle trim.</p>
-                  <div class="amazon-product-rating">★★★★☆ <span>4.3</span></div>
-                  <div class="amazon-product-price">$25.99</div>
-                  <button class="btn btn-primary add-to-cart" data-name="White Shawl" data-price="25.99" data-image="Shawlwhite.JPG">Add to Cart</button>
-                </div>
-              </article>
-
-              <article class="amazon-product-card shop-product" data-category="shawls" data-name="Shawl Showcase" data-price="25.99">
-                <div class="amazon-product-image-wrap">
-                  <img src="Shawlbundle.JPG" alt="Shawl Showcase" />
-                </div>
-                <div class="amazon-product-body">
-                  <h3>Shawl Showcase</h3>
-                  <p>A featured display view of the HemAth shawl collection.</p>
-                  <div class="amazon-product-rating">★★★★★ <span>4.9</span></div>
-                  <div class="amazon-product-price">$25.99</div>
-                  <button class="btn btn-primary add-to-cart" data-name="Shawl Showcase" data-price="25.99" data-image="Shawlbundle.JPG">Add to Cart</button>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section class="amazon-section-block" data-category-section="aathor">
-            <div class="amazon-section-heading">
-              <div>
-                <p class="amazon-section-label">Aathor</p>
-                <h2>Traditional Aathor Collection</h2>
-                <p>Handmade pieces inspired by a cherished Kashmiri tradition.</p>
-              </div>
-            </div>
-
-            <div class="amazon-product-grid">
-              <article class="amazon-product-card shop-product" data-category="aathor" data-name="Aathor Style 1" data-price="20">
-                <div class="amazon-product-image-wrap"><img src="Aathor1.JPG" alt="Aathor Style 1" /></div>
-                <div class="amazon-product-body"><h3>Aathor Style 1</h3><p>Traditional red-bead Aathor with handcrafted tassel detail.</p><div class="amazon-product-rating">★★★★★ <span>4.8</span></div><div class="amazon-product-price">$20.00</div><button class="btn btn-primary add-to-cart" data-name="Aathor Style 1" data-price="20" data-image="Aathor1.JPG">Add to Cart</button></div>
-              </article>
-              <article class="amazon-product-card shop-product" data-category="aathor" data-name="Aathor Style 2" data-price="20">
-                <div class="amazon-product-image-wrap"><img src="Aathor2.JPG" alt="Aathor Style 2" /></div>
-                <div class="amazon-product-body"><h3>Aathor Style 2</h3><p>Elegant multicolor chain design with festive detail.</p><div class="amazon-product-rating">★★★★☆ <span>4.4</span></div><div class="amazon-product-price">$20.00</div><button class="btn btn-primary add-to-cart" data-name="Aathor Style 2" data-price="20" data-image="Aathor2.JPG">Add to Cart</button></div>
-              </article>
-              <article class="amazon-product-card shop-product" data-category="aathor" data-name="Aathor Style 3" data-price="20">
-                <div class="amazon-product-image-wrap"><img src="Aathor3.JPG" alt="Aathor Style 3" /></div>
-                <div class="amazon-product-body"><h3>Aathor Style 3</h3><p>Blue-bead handcrafted Aathor with bold artisan contrast.</p><div class="amazon-product-rating">★★★★☆ <span>4.5</span></div><div class="amazon-product-price">$20.00</div><button class="btn btn-primary add-to-cart" data-name="Aathor Style 3" data-price="20" data-image="Aathor3.JPG">Add to Cart</button></div>
-              </article>
-              <article class="amazon-product-card shop-product" data-category="aathor" data-name="Aathor Style 4" data-price="20">
-                <div class="amazon-product-image-wrap"><img src="Aathor4.JPG" alt="Aathor Style 4" /></div>
-                <div class="amazon-product-body"><h3>Aathor Style 4</h3><p>Structured red tassel design with handcrafted flow.</p><div class="amazon-product-rating">★★★★☆ <span>4.3</span></div><div class="amazon-product-price">$20.00</div><button class="btn btn-primary add-to-cart" data-name="Aathor Style 4" data-price="20" data-image="Aathor4.JPG">Add to Cart</button></div>
-              </article>
-              <article class="amazon-product-card shop-product" data-category="aathor" data-name="Aathor Style 5" data-price="20">
-                <div class="amazon-product-image-wrap"><img src="Aathor5.JPG" alt="Aathor Style 5" /></div>
-                <div class="amazon-product-body"><h3>Aathor Style 5</h3><p>Compact tassel styling with clustered red beadwork.</p><div class="amazon-product-rating">★★★★☆ <span>4.2</span></div><div class="amazon-product-price">$20.00</div><button class="btn btn-primary add-to-cart" data-name="Aathor Style 5" data-price="20" data-image="Aathor5.JPG">Add to Cart</button></div>
-              </article>
-              <article class="amazon-product-card shop-product" data-category="aathor" data-name="Aathor Style 6" data-price="20">
-                <div class="amazon-product-image-wrap"><img src="Aathor6.JPG" alt="Aathor Style 6" /></div>
-                <div class="amazon-product-body"><h3>Aathor Style 6</h3><p>Long red chain Aathor with ceremonial character.</p><div class="amazon-product-rating">★★★★★ <span>4.7</span></div><div class="amazon-product-price">$20.00</div><button class="btn btn-primary add-to-cart" data-name="Aathor Style 6" data-price="20" data-image="Aathor6.JPG">Add to Cart</button></div>
-              </article>
-            </div>
-          </section>
-
-          <section class="amazon-section-block" data-category-section="tea">
-            <div class="amazon-section-heading">
-              <div>
-                <p class="amazon-section-label">Tea</p>
-                <h2>Kashmiri Khewa Tea</h2>
-                <p>Traditional tea blends presented with warmth and cultural connection.</p>
-              </div>
-            </div>
-
-            <div class="amazon-product-grid">
-              <article class="amazon-product-card shop-product" data-category="tea" data-name="Khewa Original" data-price="10">
-                <div class="amazon-product-image-wrap"><img src="Kasmirigreenteakhewa.JPG" alt="Khewa Original" /></div>
-                <div class="amazon-product-body"><h3>Khewa Original</h3><p>Authentic Kashmiri khewa green tea in its classic original profile.</p><div class="amazon-product-rating">★★★★★ <span>4.8</span></div><div class="amazon-product-price">$10.00</div><button class="btn btn-primary add-to-cart" data-name="Khewa Original" data-price="10" data-image="Kasmirigreenteakhewa.JPG">Add to Cart</button></div>
-              </article>
-              <article class="amazon-product-card shop-product" data-category="tea" data-name="Khewa Cinnamon" data-price="10">
-                <div class="amazon-product-image-wrap"><img src="Kasmirigreenteacinnamon.JPG" alt="Khewa Cinnamon" /></div>
-                <div class="amazon-product-body"><h3>Khewa Cinnamon</h3><p>Warm green tea blend with cinnamon-inspired notes.</p><div class="amazon-product-rating">★★★★☆ <span>4.4</span></div><div class="amazon-product-price">$10.00</div><button class="btn btn-primary add-to-cart" data-name="Khewa Cinnamon" data-price="10" data-image="Kasmirigreenteacinnamon.JPG">Add to Cart</button></div>
-              </article>
-              <article class="amazon-product-card shop-product" data-category="tea" data-name="Khewa Tea Display" data-price="10">
-                <div class="amazon-product-image-wrap"><img src="Khewagoogle2.png" alt="Khewa Tea Display" /></div>
-                <div class="amazon-product-body"><h3>Khewa Tea Display</h3><p>A clean tea display image that complements the khewa product showcase.</p><div class="amazon-product-rating">★★★★☆ <span>4.3</span></div><div class="amazon-product-price">$10.00</div><button class="btn btn-primary add-to-cart" data-name="Khewa Tea Display" data-price="10" data-image="Khewagoogle2.png">Add to Cart</button></div>
-              </article>
-            </div>
-          </section>
-
-          <section class="amazon-section-block" data-category-section="clothing">
-            <div class="amazon-section-heading">
-              <div>
-                <p class="amazon-section-label">Clothing</p>
-                <h2>HemAth Clothing Pieces</h2>
-                <p>Select garments and styled pieces that extend the HemAth collection.</p>
-              </div>
-            </div>
-
-            <div class="amazon-product-grid">
-              <article class="amazon-product-card shop-product" data-category="clothing" data-name="Embroidered Garment" data-price="25.99">
-                <div class="amazon-product-image-wrap"><img src="Cloth1.JPG" alt="Embroidered Garment" /></div>
-                <div class="amazon-product-body"><h3>Embroidered Garment</h3><p>Statement orange piece with ornate gold embroidery details.</p><div class="amazon-product-rating">★★★★☆ <span>4.5</span></div><div class="amazon-product-price">$25.99</div><button class="btn btn-primary add-to-cart" data-name="Embroidered Garment" data-price="25.99" data-image="Cloth1.JPG">Add to Cart</button></div>
-              </article>
-              <article class="amazon-product-card shop-product" data-category="clothing" data-name="Red Plaid Garment" data-price="25.99">
-                <div class="amazon-product-image-wrap"><img src="Cloth2.JPG" alt="Red Plaid Garment" /></div>
-                <div class="amazon-product-body"><h3>Red Plaid Garment</h3><p>A bold red textile piece with a structured, modern silhouette.</p><div class="amazon-product-rating">★★★★☆ <span>4.2</span></div><div class="amazon-product-price">$25.99</div><button class="btn btn-primary add-to-cart" data-name="Red Plaid Garment" data-price="25.99" data-image="Cloth2.JPG">Add to Cart</button></div>
-              </article>
-              <article class="amazon-product-card shop-product" data-category="clothing" data-name="Styled Clothing Look" data-price="25.99">
-                <div class="amazon-product-image-wrap"><img src="Clothshawl.JPG" alt="Styled Clothing Look" /></div>
-                <div class="amazon-product-body"><h3>Styled Clothing Look</h3><p>A styled HemAth presentation combining garment and shawl detail.</p><div class="amazon-product-rating">★★★★★ <span>4.7</span></div><div class="amazon-product-price">$25.99</div><button class="btn btn-primary add-to-cart" data-name="Styled Clothing Look" data-price="25.99" data-image="Clothshawl.JPG">Add to Cart</button></div>
-              </article>
-            </div>
-          </section>
-        </main>
-
-        <aside class="shop-cart-sidebar">
-          <div class="shop-cart-box">
-            <h2>Your Cart</h2>
-            <p class="shop-cart-subtext">
-              Add products while browsing. This cart stays on the page and is saved in your browser.
-            </p>
-
-            <div class="cart-items" id="cart-items">
-              <p class="empty-cart">Your cart is empty.</p>
-            </div>
-
-            <div class="cart-summary">
-              <div class="cart-summary-row">
-                <span>Items</span>
-                <strong id="cart-item-total">0</strong>
-              </div>
-              <div class="cart-summary-row">
-                <span>Total</span>
-                <strong id="cart-total">$0.00</strong>
-              </div>
-
-              <div class="cart-buttons">
-                <button class="btn btn-primary" id="checkout-inquiry">Checkout Inquiry</button>
-                <button class="btn btn-secondary" id="clear-cart">Clear Cart</button>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
     </div>
-  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <div>
-        <h3>HemAth</h3>
-        <p>Handmade heritage. Thoughtful design. Community impact.</p>
-      </div>
+  </div>
+</section>
 
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="artisans.html">Artisans</a>
-        <a href="shop.html">Shop</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-  </footer>
+<section class="section">
+  <div class="container">
+    <h2>Cart</h2>
+    <div id="cart-items"></div>
+    <h3>Total: $<span id="cart-total">0</span></h3>
+    <button id="clear-cart">Clear Cart</button>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
